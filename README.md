@@ -1,7 +1,7 @@
 <div align="center" id="top"> 
   <img src="./logo.png" alt="logo" />
 </div>
-<h1 align="center">Proyecto Final</h1>
+<h1 align="center">Proyecto Final - Sistema Ecommerce</h1>
 <p align="center">
   <a href="#01-acerca">Acerca</a> &#xa0; | &#xa0; 
   <a href="#02-caracteristicas">Caracteristicas</a> &#xa0; | &#xa0;
