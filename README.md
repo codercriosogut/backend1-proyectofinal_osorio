@@ -16,47 +16,63 @@
 <br>
 
 ## :01: Acerca ##
-Este proyecto utiliza diversas tecnologías para gestionar productos y carritos de compras a través de una API REST y vistas renderizadas en el cliente.
+Este proyecto es basado en Node.js que implementa un backend para la gestión de productos y carritos de compras. Utiliza Express para manejar las rutas, Mongoose para la conexión con la base de datos, y Handlebars para renderizar las vistas. Este proyecto permite agregar, ver y gestionar productos y carritos de compras.
 
 
 ## :02: Caracteristicas ##
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+- **Gestión de productos**: Visualización, adición y eliminación de productos.
+- **Gestión de carritos**: Visualización y administración de carritos de compras.
+- **Interfaz amigable**: Utiliza Handlebars para crear vistas dinámicas.
+- **Arquitectura modular**: Basado en Express, con rutas separadas para productos y carritos.
+
 
 ## :03: Tecnologias ##
-- **MongoDB**: Utilizado para almacenar productos y carritos de compras.
-- **Mongoose**: Permite la interacción con MongoDB a través de esquemas y modelos.
-- **Express**: Maneja las rutas y endpoints de la API.
-- **Handlebars**: Renderiza las vistas del cliente, como la lista de productos y formularios.
+- **Node.js**: Entorno de ejecución para JavaScript.
+- **Express.js**: Framework para la construcción de aplicaciones web en Node.js.
+- **Mongoose**: Librería para modelar datos en MongoDB.
+- **Handlebars**: Motor de plantillas para generar vistas dinámicas.
+- **MongoDB**: Base de datos NoSQL para almacenar productos y carritos.
 
 
 ## :04: Rutas-Productos ##
-- **GET /api/products/**: Obtiene un producto por su ID.
-- **POST /api/products**: Crea un nuevo producto.
-- **PUT /api/products/**: Actualiza un producto existente.
-- **DELETE /api/products/**: Elimina un producto.
+- **Ver productos**: `GET /products`
+- **Agregar producto**: `GET /add-product`
+- **Guardar producto**: `POST /add-product`
+- **Eliminar producto**: `DELETE /products/:id`
 
 ## :05: Rutas-Carritos
-- **GET /api/carts/**: Obtiene un carrito por su ID, con los productos relacionados.
-- **POST /api/carts/**/product/**: Agrega un producto a un carrito.
-- **DELETE /api/carts/**/product/**: Elimina un producto de un carrito.
+- **Ver carrito**: `GET /carts/:id`
+- **Agregar producto al carrito**: `POST /carts/:id/add`
+- **Eliminar producto del carrito**: `DELETE /carts/:id/remove/:productId`
 
 ## :06: vistas
-- **/views/products**: Muestra una lista paginada de productos, permitiendo buscar y filtrar.
-- **/views/addProduct**: Muestra un formulario para agregar nuevos productos.
-
+- **Inicio**: `http://localhost:8080/`
+- **Lista de Productos**: `http://localhost:8080/products`
+- **Agregar Nuevo Producto**: `http://localhost:8080/add-product`
+- **Ver carritos**: `http://localhost:8080/carts`
 
 ## :07: Estructura_del_proyecto
+├──
 - `src/app.js`
+- `src/utils.js`
+
+- `src/models/carts.js`
+- `src/models/products.js`
+│
 - `src/routes/carts.router.js`
 - `src/routes/products.router.js`
-- `views/form.handlebars`
-- `views/realtimeproducts.handlebars`
-- `views/layouts/main.handlebars`
-- `carritos.json`
+- `src/routes/views.router.js`
+
+- `src/views/addProduct.handlebars`
+- `src/views/cart.handlebars`
+- `src/views/index.handlebars`
+- `src/views/products.handlebars`
+
+- `src/views/layouts/main.handlebars`
+
+- `package-lock.json`
 - `package.json`
-- `productos.json`
+- `README.md`
 
 
 ## :08: Instrucciones ##
