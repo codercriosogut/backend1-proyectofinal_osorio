@@ -93,3 +93,6 @@ $ npm start
 # Acceso Sitio Web
 $ http://localhost:8080
 ```
+<div align="center" id="top"> 
+  <img src="./logo.png" alt="logo" />
+</div>
