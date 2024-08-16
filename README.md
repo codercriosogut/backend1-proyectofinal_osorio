@@ -52,13 +52,12 @@ Este proyecto es basado en Node.js que implementa un backend para la gestión de
 - **Ver carritos**: `http://localhost:8080/carts`
 
 ## :07: Estructura_del_proyecto
-├──
 - `src/app.js`
 - `src/utils.js`
 
 - `src/models/carts.js`
 - `src/models/products.js`
-│
+
 - `src/routes/carts.router.js`
 - `src/routes/products.router.js`
 - `src/routes/views.router.js`
