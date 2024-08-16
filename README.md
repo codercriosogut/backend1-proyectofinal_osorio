@@ -94,5 +94,5 @@ $ npm start
 $ http://localhost:8080
 ```
 <div align="center" id="top"> 
-  <img src="./logo.png" alt="logo" />
+  <img src="./Vistas.png" alt="logo" />
 </div>
