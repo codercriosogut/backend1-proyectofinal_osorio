@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="http://localhost:8080/">Inicio</a></li>
+            <li><a href="http://localhost:8080/products">Ver Productos</a></li>
+            <li><a href="http://localhost:8080/add-product">Agregar Producto</a></li>
+            <li><a href="http://localhost:8080/carts">Ver Carritos</a></li>
+        </ul>
+    </nav>
+    <h1>Lista de Productos</h1>
+    <form method="GET" action="/api/products">
+        <input type="text" name="name" placeholder="Nombre" value="{{filters.name}}">
+        <input type="number" name="price" placeholder="Precio máximo" value="{{filters.price}}">
+        <input type="text" name="category" placeholder="Categoría" value="{{filters.category}}">
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <ul>
+        {{#each products}}
+        <li>
+            <h3>{{this.title}}</h3>
+            <p>Descripción: {{this.description}}</p>
+            <p>Precio: {{this.price}}</p>
+            <p>Categoría: {{this.category}}</p>
+            <button onclick="addToCart('{{this._id}}')">Agregar al carrito</button>
+            <button onclick="deleteProduct('{{this._id}}')">Eliminar</button>
+        </li>
+        {{/each}}
+    </ul>
+
+    <div>
+        {{#if hasPrevPage}}
+        <a
+            href="?page={{prevPage}}&limit={{limit}}&name={{filters.name}}&price={{filters.price}}&category={{filters.category}}">Anterior</a>
+        {{/if}}
+
+        <span>Página {{currentPage}} de {{totalPages}}</span>
+
+        {{#if hasNextPage}}
+        <a
+            href="?page={{nextPage}}&limit={{limit}}&name={{filters.name}}&price={{filters.price}}&category={{filters.category}}">Siguiente</a>
+        {{/if}}
+    </div>
+
+    <script>
+        function addToCart(productId) {
+        }
+
+        function deleteProduct(productId) {
+        }
+    </script>
+
+</body>
+
+</html>

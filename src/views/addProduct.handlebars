@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="http://localhost:8080/">Inicio</a></li>
+            <li><a href="http://localhost:8080/products">Ver Productos</a></li>
+            <li><a href="http://localhost:8080/add-product">Agregar Producto</a></li>
+            <li><a href="http://localhost:8080/carts">Ver Carritos</a></li>
+        </ul>
+    </nav>
+    <h1>Agregar Nuevo Producto</h1>
+    <form action="/api/products" method="POST">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="description">Descripción:</label>
+        <input type="text" id="description" name="description" required><br>
+
+        <label for="code">Código:</label>
+        <input type="text" id="code" name="code" required><br>
+
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br>
+
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" required><br>
+
+        <label for="category">Categoría:</label>
+        <input type="text" id="category" name="category" required><br>
+
+        <label for="thumbnails">Thumbnails (opcional, separados por comas):</label>
+        <input type="text" id="thumbnails" name="thumbnails"><br>
+
+        <button type="submit">Agregar Producto</button>
+    </form>
+</body>
+
+</html>
